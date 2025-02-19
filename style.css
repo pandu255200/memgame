@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Game Container */
+  #game-container {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    background-color: #87CEEB;
+    border: 2px solid #000;
+    overflow: hidden;
+    margin-bottom: 50px; /* More space for the start button */
+  }
+  
+  /* Player */
+  #player {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    background-color: #FF6347;
+    border-radius: 50%;
+  }
+  
+  /* Obstacle */
+  #obstacle {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #8B4513;
+    display: none; /* Hide obstacle initially */
+  }
+  
+  /* Desktop animation */
+  @keyframes moveObstacle {
+    from {
+      right: 0;
+    }
+    to {
+      right: 800px;
+    }
+  }
+  
+  /* Mobile animation (slower for smaller screens) */
+  @media (max-width: 600px) {
+    #game-container {
+      width: 100%;
+      height: 300px;
+    }
+  
+    #player {
+      width: 40px;
+      height: 40px;
+      left: 50px;
+      bottom: 40px;
+    }
+  
+    #obstacle {
+      width: 30px;
+      height: 30px;
+    }
+  
+    @keyframes moveObstacle {
+      from {
+        right: 0;
+      }
+      to {
+        right: 100vw;
+      }
+    }
+  }
+  
+  /* Score Display */
+  #score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: #000;
+  }
+  
+  /* Start Button (Now Properly Positioned Below the Game Container) */
+  #startBtn {
+    position: relative;
+    bottom: -30px; /* Moves it further below */
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
